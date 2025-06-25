@@ -47,7 +47,7 @@ function Profile() {
 
   const fetchProfile = async () => {
     try {
-      const response = await axios.get('http://localhost:3001/api/profile', {
+      const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/profile`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       setProfile({
@@ -74,7 +74,7 @@ function Profile() {
     setSaving(true);
     
     try {
-      const response = await axios.put('http://localhost:3001/api/profile', profile, {
+      const response = await axios.put(`${import.meta.env.VITE_API_BASE_URL}/profile`, profile, {
         headers: { Authorization: `Bearer ${token}` }
       });
       
@@ -107,7 +107,7 @@ function Profile() {
     setSaving(true);
     
     try {
-      await axios.put('http://localhost:3001/api/profile/password', {
+      await axios.put(`${import.meta.env.VITE_API_BASE_URL}/profile/password`, {
         currentPassword: passwords.currentPassword,
         newPassword: passwords.newPassword
       }, {

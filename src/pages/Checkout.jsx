@@ -40,7 +40,7 @@ function Checkout() {
 
     const fetchPaymentMethods = async () => {
       try {
-        const res = await axios.get('http://localhost:3001/api/payment/methods', {
+        const res = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/payment/methods`, {
           headers: { Authorization: `Bearer ${token}` }
         });
         setPaymentMethods(res.data);
@@ -152,14 +152,14 @@ function Checkout() {
       };
 
       const response = await axios.post(
-        'http://localhost:3001/api/payment/process',
+        `${import.meta.env.VITE_API_BASE_URL}/payment/process`,
         paymentData,
         { headers: { Authorization: `Bearer ${token}` } }
       );
 
       if (response.data.success) {
         // Clear cart after successful payment
-        await axios.delete('http://localhost:3001/api/cart/clear', {
+        await axios.delete(`${import.meta.env.VITE_API_BASE_URL}/cart/clear`, {
           headers: { Authorization: `Bearer ${token}` }
         });
 

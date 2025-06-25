@@ -16,7 +16,7 @@ function ProductCard({ product }) {
 
     try {
       await axios.post(
-        'http://localhost:3001/api/cart/add',
+        `${import.meta.env.VITE_API_BASE_URL}/cart/add`,
         { productId: product._id, quantity: 1 },
         { headers: { Authorization: `Bearer ${token}` } }
       );

@@ -15,7 +15,7 @@ function ProductDetail() {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const res = await axios.get(`http://localhost:3001/api/products/${id}`);
+        const res = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/products/${id}`);
         setProduct(res.data);
         setLoading(false);
       } catch (error) {
@@ -34,7 +34,7 @@ function ProductDetail() {
     
     try {
       await axios.post(
-        'http://localhost:3001/api/cart/add',
+        `${import.meta.env.VITE_API_BASE_URL}/cart/add`,
         { productId: id, quantity },
         { headers: { Authorization: `Bearer ${token}` } }
       );

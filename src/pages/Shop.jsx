@@ -14,7 +14,7 @@ function Shop() {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const res = await axios.get('http://localhost:3001/api/products');
+        const res = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/products`);
         setProducts(res.data);
         setFilteredProducts(res.data);
         setLoading(false);
@@ -52,8 +52,8 @@ function Shop() {
   const seedProducts = async () => {
     try {
       setLoading(true);
-      await axios.post('http://localhost:3001/api/products/seed');
-      const res = await axios.get('http://localhost:3001/api/products');
+      await axios.post(`${import.meta.env.VITE_API_BASE_URL}/products/seed`);
+      const res = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/products`);
       setProducts(res.data);
       setFilteredProducts(res.data);
       setLoading(false);

@@ -13,7 +13,7 @@ function Home() {
     // Fetch products and show first 6 as featured
     const fetchProducts = async () => {
       try {
-        const res = await axios.get('http://localhost:3001/api/products');
+        const res = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/products`);
         setFeaturedProducts(res.data.slice(0, 6));
         setLoading(false);
       } catch (error) {
@@ -27,8 +27,8 @@ function Home() {
 
   const seedProducts = async () => {
     try {
-      await axios.post('http://localhost:3001/api/products/seed');
-      const res = await axios.get('http://localhost:3001/api/products');
+      await axios.post(`${import.meta.env.VITE_API_BASE_URL}/products/seed`);
+      const res = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/products`);
       setFeaturedProducts(res.data.slice(0, 6));
     } catch (error) {
       console.error('Error seeding products:', error);

@@ -16,7 +16,7 @@ function Header() {
     const fetchCartCount = async () => {
       if (token) {
         try {
-          const res = await axios.get('http://localhost:3001/api/cart', {
+          const res = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/cart`, {
             headers: { Authorization: `Bearer ${token}` }
           });
           const totalItems = res.data.items?.reduce((total, item) => total + item.quantity, 0) || 0;
@@ -27,10 +27,9 @@ function Header() {
         }
       } else {
         setCartItemCount(0);
-      pakaj
       }
     };
-
+    
     fetchCartCount();
     
     // Listen for cart updates
