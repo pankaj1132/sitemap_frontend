@@ -166,7 +166,7 @@ function Profile() {
 
   return (
     <div className={`min-h-screen ${colors.bg.primary} py-8 transition-colors duration-300`}>
-      <div className="container mx-auto px-4 max-w-4xl">
+      <div className="container mx-auto  mt-9 px-4 max-w-4xl">
         <div className={`${colors.bg.card} rounded-lg shadow-xl overflow-hidden transform hover:shadow-2xl transition-all duration-300`}>
           
           <div className={`${colors.bg.gradient} px-6 py-8 relative overflow-hidden`}>
