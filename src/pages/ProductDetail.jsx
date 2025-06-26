@@ -49,10 +49,10 @@ function ProductDetail() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+      <div className="min-h-screen bg-gray-50 dark:bg-gray-900 flex items-center justify-center">
         <div className="text-center">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-green-600 mx-auto"></div>
-          <p className="mt-4 text-gray-600">Loading product...</p>
+          <p className="mt-4 text-gray-600 dark:text-gray-300">Loading product...</p>
         </div>
       </div>
     );
@@ -60,9 +60,9 @@ function ProductDetail() {
 
   if (!product) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+      <div className="min-h-screen bg-gray-50 dark:bg-gray-900 flex items-center justify-center">
         <div className="text-center">
-          <h2 className="text-2xl font-bold text-gray-800 mb-4">Product not found</h2>
+          <h2 className="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-4">Product not found</h2>
           <Link to="/shop" className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg">
             Back to Shop
           </Link>
@@ -72,18 +72,18 @@ function ProductDetail() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
       <div className="container mx-auto px-4 py-8">
         
         <nav className="mb-8">
           <Link to="/" className="text-green-600 hover:text-green-700">Home</Link>
-          <span className="mx-2 text-gray-500">/</span>
+          <span className="mx-2 text-gray-500 dark:text-gray-400">/</span>
           <Link to="/shop" className="text-green-600 hover:text-green-700">Shop</Link>
-          <span className="mx-2 text-gray-500">/</span>
-          <span className="text-gray-800">{product.name}</span>
+          <span className="mx-2 text-gray-500 dark:text-gray-400">/</span>
+          <span className="text-gray-800 dark:text-gray-100">{product.name}</span>
         </nav>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 bg-white rounded-lg shadow-md overflow-hidden">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden">
           
           <div className="relative">
             <img 
@@ -96,43 +96,41 @@ function ProductDetail() {
             </div>
           </div>
 
-          
           <div className="p-8">
-            <h1 className="text-3xl font-bold text-gray-800 mb-4">{product.name}</h1>
+            <h1 className="text-3xl font-bold text-gray-800 dark:text-gray-100 mb-4">{product.name}</h1>
             
             <div className="mb-6">
               <span className="text-4xl font-bold text-green-600">${product.price}</span>
             </div>
 
             <div className="mb-6">
-              <h3 className="text-lg font-semibold text-gray-800 mb-2">Sustainability</h3>
-              <p className="text-green-700 bg-green-50 p-3 rounded-lg">
+              <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-100 mb-2">Sustainability</h3>
+              <p className="text-green-700 dark:text-green-300 bg-green-50 dark:bg-green-900 p-3 rounded-lg">
                 🌱 {product.sustainability}
               </p>
             </div>
 
             <div className="mb-6">
-              <h3 className="text-lg font-semibold text-gray-800 mb-2">Description</h3>
-              <p className="text-gray-600 leading-relaxed">{product.description}</p>
+              <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-100 mb-2">Description</h3>
+              <p className="text-gray-600 dark:text-gray-300 leading-relaxed">{product.description}</p>
             </div>
 
-            
             <div className="mb-6">
-              <h3 className="text-lg font-semibold text-gray-800 mb-3">Quantity</h3>
+              <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-100 mb-3">Quantity</h3>
               <div className="flex items-center space-x-4">
-                <div className="flex items-center border border-gray-300 rounded-lg">
+                <div className="flex items-center border border-gray-300 dark:border-gray-600 rounded-lg">
                   <button 
                     onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                    className="px-4 py-2 hover:bg-gray-100 transition duration-200"
+                    className="px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-800 dark:text-gray-200 transition duration-200"
                   >
                     -
                   </button>
-                  <span className="px-4 py-2 border-x border-gray-300 min-w-[60px] text-center">
+                  <span className="px-4 py-2 border-x border-gray-300 dark:border-gray-600 min-w-[60px] text-center text-gray-800 dark:text-gray-100">
                     {quantity}
                   </span>
                   <button 
                     onClick={() => setQuantity(quantity + 1)}
-                    className="px-4 py-2 hover:bg-gray-100 transition duration-200"
+                    className="px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-800 dark:text-gray-200 transition duration-200"
                   >
                     +
                   </button>
@@ -150,18 +148,17 @@ function ProductDetail() {
               </div>
             </div>
 
-            
             <div className="flex space-x-4">
               <Link 
                 to="/shop"
-                className="flex-1 bg-gray-100 hover:bg-gray-200 text-gray-800 px-6 py-3 rounded-lg font-medium transition duration-200 text-center"
+                className="flex-1 bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-200 px-6 py-3 rounded-lg font-medium transition duration-200 text-center"
               >
                 Continue Shopping
               </Link>
               {token && (
                 <Link 
                   to="/cart"
-                  className="flex-1 bg-green-100 hover:bg-green-200 text-green-800 px-6 py-3 rounded-lg font-medium transition duration-200 text-center"
+                  className="flex-1 bg-green-100 dark:bg-green-900 hover:bg-green-200 dark:hover:bg-green-800 text-green-800 dark:text-green-200 px-6 py-3 rounded-lg font-medium transition duration-200 text-center"
                 >
                   View Cart
                 </Link>
