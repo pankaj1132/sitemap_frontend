@@ -20,7 +20,7 @@ function OrderConfirmation() {
     <div className="min-h-screen bg-gray-50 py-8">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto">
-          {/* Success Header */}
+          
           <div className="text-center mb-8">
             <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
               <svg className="w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -31,7 +31,7 @@ function OrderConfirmation() {
             <p className="text-gray-600">Thank you for your purchase. Your order has been successfully processed.</p>
           </div>
 
-          {/* Order Details */}
+          
           <div className="bg-white rounded-lg shadow-md p-6 mb-6">
             <h2 className="text-xl font-semibold text-gray-800 mb-4">Order Details</h2>
             
@@ -85,7 +85,7 @@ function OrderConfirmation() {
               </div>
             </div>
 
-            {/* Billing Address */}
+            
             {billingAddress && (
               <div className="mb-6">
                 <h3 className="font-medium text-gray-800 mb-2">Billing Address</h3>
@@ -99,7 +99,7 @@ function OrderConfirmation() {
               </div>
             )}
 
-            {/* Ordered Items */}
+            
             <div>
               <h3 className="font-medium text-gray-800 mb-3">Items Ordered</h3>
               <div className="space-y-3">
@@ -118,7 +118,7 @@ function OrderConfirmation() {
               </div>
             </div>
 
-            {/* Order Total */}
+            
             <div className="border-t pt-4 mt-4">
               <div className="flex justify-between text-lg font-semibold">
                 <span>Total Paid</span>
@@ -127,7 +127,7 @@ function OrderConfirmation() {
             </div>
           </div>
 
-          {/* Next Steps */}
+          
           <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-6">
             <h3 className="font-medium text-blue-800 mb-2">What's Next?</h3>
             <ul className="text-sm text-blue-700 space-y-1">
@@ -138,7 +138,7 @@ function OrderConfirmation() {
             </ul>
           </div>
 
-          {/* Environmental Impact */}
+          
           <div className="bg-green-50 border border-green-200 rounded-lg p-6 mb-6">
             <h3 className="font-medium text-green-800 mb-2">🌱 Environmental Impact</h3>
             <p className="text-sm text-green-700">
@@ -147,7 +147,7 @@ function OrderConfirmation() {
             </p>
           </div>
 
-          {/* Action Buttons */}
+          
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               to="/shop"
@@ -169,7 +169,7 @@ function OrderConfirmation() {
             </button>
           </div>
 
-          {/* Customer Support */}
+          
           <div className="text-center mt-8 p-4 bg-gray-50 rounded-lg">
             <p className="text-sm text-gray-600">
               Need help with your order? 

@@ -8,7 +8,7 @@ function Toast({ message, type = 'info', duration = 3000, onClose }) {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsVisible(false);
-      setTimeout(onClose, 300); // Wait for fade out animation
+      setTimeout(onClose, 300);
     }, duration);
 
     return () => clearTimeout(timer);
@@ -82,7 +82,7 @@ function Toast({ message, type = 'info', duration = 3000, onClose }) {
               className={`${colors.bg.card} rounded-md inline-flex ${colors.text.secondary} hover:${colors.text.primary} focus:outline-none transition-colors duration-200 transform hover:scale-110`}
               onClick={() => {
                 setIsVisible(false);
-                setTimeout(onClose, 300);
+                setTimeout(onClose, 1000);
               }}
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

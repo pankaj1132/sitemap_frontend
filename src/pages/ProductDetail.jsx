@@ -39,7 +39,6 @@ function ProductDetail() {
         { headers: { Authorization: `Bearer ${token}` } }
       );
       
-      // Trigger cart update event
       window.dispatchEvent(new CustomEvent('cartUpdated'));
       showSuccess(`Added ${quantity} ${quantity > 1 ? 'items' : 'item'} to cart!`);
     } catch (error) {
@@ -75,7 +74,7 @@ function ProductDetail() {
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="container mx-auto px-4 py-8">
-        {/* Breadcrumb */}
+        
         <nav className="mb-8">
           <Link to="/" className="text-green-600 hover:text-green-700">Home</Link>
           <span className="mx-2 text-gray-500">/</span>
@@ -85,7 +84,7 @@ function ProductDetail() {
         </nav>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 bg-white rounded-lg shadow-md overflow-hidden">
-          {/* Product Image */}
+          
           <div className="relative">
             <img 
               src={product.image} 
@@ -97,7 +96,7 @@ function ProductDetail() {
             </div>
           </div>
 
-          {/* Product Details */}
+          
           <div className="p-8">
             <h1 className="text-3xl font-bold text-gray-800 mb-4">{product.name}</h1>
             
@@ -117,7 +116,7 @@ function ProductDetail() {
               <p className="text-gray-600 leading-relaxed">{product.description}</p>
             </div>
 
-            {/* Quantity and Add to Cart */}
+            
             <div className="mb-6">
               <h3 className="text-lg font-semibold text-gray-800 mb-3">Quantity</h3>
               <div className="flex items-center space-x-4">
@@ -151,7 +150,7 @@ function ProductDetail() {
               </div>
             </div>
 
-            {/* Action Buttons */}
+            
             <div className="flex space-x-4">
               <Link 
                 to="/shop"

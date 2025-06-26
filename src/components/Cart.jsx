@@ -33,7 +33,7 @@ function Cart({ cart, removeFromCart, updateQuantity }) {
         <h1 className="text-3xl font-bold text-gray-800 mb-8">Shopping Cart</h1>
         
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Cart Items */}
+          
           <div className="lg:col-span-2">
             <div className="bg-white rounded-lg shadow-md">
               {cart.items.map((item, index) => (
@@ -89,7 +89,7 @@ function Cart({ cart, removeFromCart, updateQuantity }) {
             </div>
           </div>
           
-          {/* Order Summary */}
+          
           <div className="lg:col-span-1">
             <div className="bg-white rounded-lg shadow-md p-6 sticky top-8">
               <h2 className="text-xl font-semibold mb-4">Order Summary</h2>

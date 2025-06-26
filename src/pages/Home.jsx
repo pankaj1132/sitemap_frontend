@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import ProductCard from '../components/ProductCard';
@@ -10,19 +10,17 @@ function Home() {
   const { colors } = useTheme();
 
   useEffect(() => {
-    // Fetch products and show first 6 as featured
-    const fetchProducts = async () => {
+    const fetchFeaturedProducts = async () => {
       try {
         const res = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/products`);
         setFeaturedProducts(res.data.slice(0, 6));
         setLoading(false);
       } catch (error) {
         console.error('Error fetching products:', error);
-        setLoading(false);
       }
     };
 
-    fetchProducts();
+    fetchFeaturedProducts();
   }, []);
 
   const seedProducts = async () => {
@@ -37,11 +35,11 @@ function Home() {
 
   return (
     <div className={`min-h-screen ${colors.bg.primary} transition-colors duration-300`}>
-      {/* Hero Section */}
+      
       <div className={`${colors.bg.gradient} relative overflow-hidden`}>
         <div className="absolute inset-0 bg-gradient-to-br from-transparent to-black opacity-10"></div>
         <div className="container mx-auto px-4 py-16 relative">
-          <div className="text-center">
+          <div className="text-center mt-16">
             <h1 className="text-5xl font-bold text-white mb-6 animate-fadeIn">
               Welcome to EcoMarket
             </h1>
@@ -68,7 +66,7 @@ function Home() {
         </div>
       </div>
 
-      {/* Features Section */}
+      
       <div className={`py-16 ${colors.bg.secondary}`}>
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
@@ -112,7 +110,7 @@ function Home() {
         </div>
       </div>
 
-      {/* Featured Products Section */}
+      
       <div className={`py-16 ${colors.bg.tertiary}`}>
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">

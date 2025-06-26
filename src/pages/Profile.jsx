@@ -168,7 +168,7 @@ function Profile() {
     <div className={`min-h-screen ${colors.bg.primary} py-8 transition-colors duration-300`}>
       <div className="container mx-auto px-4 max-w-4xl">
         <div className={`${colors.bg.card} rounded-lg shadow-xl overflow-hidden transform hover:shadow-2xl transition-all duration-300`}>
-          {/* Header */}
+          
           <div className={`${colors.bg.gradient} px-6 py-8 relative overflow-hidden`}>
             <div className="absolute inset-0 bg-gradient-to-br from-transparent to-black opacity-10"></div>
             <div className="relative flex items-center space-x-4">
@@ -197,7 +197,7 @@ function Profile() {
             </div>
           </div>
 
-          {/* Tabs */}
+          
           <div className={`${colors.border.primary} border-b`}>
             <nav className="flex space-x-8 px-6">
               {[
@@ -221,7 +221,7 @@ function Profile() {
             </nav>
           </div>
 
-          {/* Content */}
+          
           <div className="p-6">
             <form onSubmit={handleProfileSubmit}>
               {activeTab === 'profile' && (
@@ -422,7 +422,7 @@ function Profile() {
                 </div>
               )}
 
-              {/* Save Button */}
+              
               {activeTab !== 'security' && (
                 <div className={`flex justify-end pt-6 ${colors.border.primary} border-t`}>
                   <button

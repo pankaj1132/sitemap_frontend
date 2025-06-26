@@ -66,17 +66,17 @@ function Shop() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
       <div className="container mx-auto px-4 py-8">
-        {/* Header */}
+        
         <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-gray-800 mb-4">Eco-Friendly Products</h1>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <h1 className="text-4xl font-bold text-gray-800 dark:text-gray-100 mb-4">Eco-Friendly Products</h1>
+          <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             Discover our complete collection of sustainable products that help protect our planet
           </p>
         </div>
 
-        {/* Search Bar */}
+        
         <div className="max-w-md mx-auto mb-8">
           <div className="relative">
             <input
@@ -84,15 +84,15 @@ function Shop() {
               placeholder="Search products..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full px-4 py-3 pl-12 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+              className="w-full px-4 py-3 pl-12 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent placeholder-gray-500 dark:placeholder-gray-400"
             />
-            <svg className="absolute left-4 top-3.5 h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="absolute left-4 top-3.5 h-5 w-5 text-gray-400 dark:text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
             </svg>
           </div>
         </div>
 
-        {/* Category Filter */}
+        
         <div className="mb-8">
           <div className="flex flex-wrap justify-center gap-4">
             {categories.map(category => (
@@ -102,7 +102,7 @@ function Shop() {
                 className={`px-6 py-2 rounded-full font-medium transition duration-200 ${
                   selectedCategory === category
                     ? 'bg-green-600 text-white'
-                    : 'bg-white text-gray-700 hover:bg-green-100 border border-gray-300'
+                    : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-green-100 dark:hover:bg-green-900 border border-gray-300 dark:border-gray-600'
                 }`}
               >
                 {category}
@@ -111,9 +111,9 @@ function Shop() {
           </div>
         </div>
 
-        {/* Products Count and Load Button */}
+        
         <div className="flex justify-between items-center mb-6">
-          <p className="text-gray-600">
+          <p className="text-gray-600 dark:text-gray-300">
             {filteredProducts.length} product{filteredProducts.length !== 1 ? 's' : ''} found
           </p>
           {products.length === 0 && (
@@ -127,19 +127,19 @@ function Shop() {
           )}
         </div>
 
-        {/* Products Grid */}
+        
         {loading ? (
           <div className="text-center py-12">
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-green-600 mx-auto"></div>
-            <p className="mt-4 text-gray-600">Loading products...</p>
+            <p className="mt-4 text-gray-600 dark:text-gray-300">Loading products...</p>
           </div>
         ) : filteredProducts.length === 0 ? (
           <div className="text-center py-12">
-            <svg className="w-16 h-16 text-gray-400 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-16 h-16 text-gray-400 dark:text-gray-500 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4"></path>
             </svg>
-            <h3 className="text-xl font-semibold text-gray-700 mb-2">No products found</h3>
-            <p className="text-gray-500">Try selecting a different category or load sample products</p>
+            <h3 className="text-xl font-semibold text-gray-700 dark:text-gray-300 mb-2">No products found</h3>
+            <p className="text-gray-500 dark:text-gray-400">Try selecting a different category or load sample products</p>
           </div>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
