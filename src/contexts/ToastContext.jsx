@@ -14,7 +14,7 @@ export const useToast = () => {
 export const ToastProvider = ({ children }) => {
   const [toasts, setToasts] = useState([]);
 
-  const addToast = (message, type = 'info', duration = 3000) => {
+  const addToast = (message, type = 'info', duration = 1000) => {
     const id = Date.now();
     const newToast = { id, message, type, duration };
     setToasts(prev => [...prev, newToast]);
